@@ -46,10 +46,10 @@ async function initDatabase() {
 }
 
 // Função para buscar a "key" de um campeão pelo nome
-function getChampionKey(championName, callback) {
+function getChampionName(championKey, callback) {
   const db = new sqlite3.Database(DB_NAME);
 
-  db.get("SELECT key FROM champions WHERE name = ?", [championName], (err, row) => {
+  db.get("SELECT name FROM champions WHERE key = ?", [championKey], (err, row) => {
     if (err) {
       callback(err, null);
     } else if (row) {
@@ -63,4 +63,4 @@ function getChampionKey(championName, callback) {
 }
 
 // Exportar as funções para que possam ser usadas em outro arquivo
-module.exports = { initDatabase, getChampionKey };
+module.exports = { initDatabase, getChampionName };

@@ -5,5 +5,24 @@
     "dotenv": "^16.4.7",
     "node-fetch": "^3.3.2",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "name": "bot-discord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dunstere/bot-discord.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dunstere/bot-discord/issues"
+  },
+  "homepage": "https://github.com/Dunstere/bot-discord#readme",
+  "description": ""
 }

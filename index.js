@@ -3,25 +3,7 @@ const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
 const fetch = require('node-fetch');
 const dotenv = require('dotenv');
 dotenv.config()
-const { TOKEN, CLIENT_ID, GUILD_ID, RIOT_API } = process.env;
-
-const { initDatabase, getChampionKey } = require('./database');
-
-initDatabase().then(() => {
-    console.log('Banco de dados carregado!');
-});
-
-const championName = 'Ahri';
-
-getChampionKey(championName, (err, key) => {
-    if (err) {
-        console.error('Erro ao buscar key do campeão:', err.message);
-    } else if (key) {
-        console.log(`A key de ${championName} é ${key}`);
-    } else {
-        console.log(`Campeão ${championName} não encontrado no banco de dados.`);
-    }
-});
+const { TOKEN, CLIENT_ID, GUILD_ID, RIOT_CHAMP_V3 } = process.env;
 
 const fs = require('node:fs');
 const path = require('node:path');
@@ -71,4 +53,4 @@ client.on('interactionCreate', async (interaction) => {
     }
 });
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(process.env.TOKEN);
